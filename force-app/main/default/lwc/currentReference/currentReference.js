@@ -8,4 +8,6 @@ export default class CurrentReference extends LightningElement {
     get pageReference(){
         return this.pageRef ? JSON.stringify(this.pageRef,null,2):'';
     }
+
+    //adding comment
 }
