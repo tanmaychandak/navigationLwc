@@ -1,0 +1,75 @@
+<template>
+    <lightning-card title="Create record using lightning record form">
+        <lightning-record-form
+          object-api-name={objectName}
+          fields={fieldList}
+          onsuccess={successHandler}
+        ></lightning-record-form>
+    </lightning-card>
+    <lightning-card title="Display record using lightning record form">
+        <lightning-record-form
+          object-api-name="Account"
+          record-id="001HE00000BEfplYAD"
+          fields={fieldList}
+        ></lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="Display record using readOnly mode lightning record form">
+        <lightning-record-form
+          object-api-name={objectName}
+          record-id="001HE00000BEfplYAD"
+          fields={fieldList}
+          mode="readonly"
+        ></lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="Display record using edit mode lightning record form">
+        <lightning-record-form
+          object-api-name={objectName}
+          record-id="001HE00000BEfplYAD"
+          fields={fieldList}
+          mode="edit"
+          columns="2" 
+        ></lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="Display record using edit layout mode lightning record form">
+        <lightning-record-form
+          object-api-name={objectName}
+          record-id="001HE00000BEfplYAD"
+          fields={fieldList}
+          mode="edit"
+          columns="2"
+          layout-type="Compact"
+        ></lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="lightning record view form">
+        <lightning-record-view-form
+          object-api-name="Account"
+          record-id="001HE00000BEfplYAD"
+        >
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_6-of-12">
+                <lightning-output-field 
+                  field-name="Name"
+                  variant="standard"
+                ></lightning-output-field>
+                <lightning-output-field 
+                  field-name="Phone"
+                  variant="standard"
+                ></lightning-output-field>
+                <lightning-output-field field-name="Industry">
+
+                </lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_6-of-12">
+                <lightning-output-field 
+                  field-name="AnnualRevenue"
+                  variant="standard"
+                ></lightning-output-field>
+            </div>
+        </div>
+    </lightning-record-view-form>
+    </lightning-card>
+</template>

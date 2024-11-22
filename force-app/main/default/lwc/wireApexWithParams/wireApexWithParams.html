@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Apex Wire in LWC">
+        <div class="slds-p-around_medium">
+            <lightning-combobox
+              name="type"
+              label="Choose your Type"
+              value={selectedType}
+              options={typeOptions}
+              onchange={typeHandle}
+               
+            ></lightning-combobox>
+            <template if:true={accounts.data}>
+                <template for:each={accounts.data} for:item="account">
+                <div class="slds-box slds-box_xx-small" key={account.Id}>
+                    <p><strong>Name: </strong>{account.Name}</p>
+                    <p><strong>Type: </strong>{account.Type}</p>
+                </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+    
+</template>
